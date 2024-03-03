@@ -13,6 +13,8 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { motion } from "framer-motion";
+import { customAnimations } from "./utilities/animation";
 
 export default function Header() {
   return (
@@ -28,28 +30,28 @@ export default function Header() {
       </div>
       <div className="hidden xl:flex xl:visible xl:justify-between xl:items-center xl:gap-10">
         <div className="flex justify-between items-center xl:gap-4">
-          <Link href={"#"}>
+          <Link href={"#"} className="transition ease-in-out scale-90 hover:scale-100">
             <p className="text-black hover:text-[#f0a535]">
               Home
             </p>
           </Link>
-          <Link href={"#"}>
+          <Link href={"#"} className="transition ease-in-out scale-90 hover:scale-100">
             <p className="text-black hover:text-[#f0a535]">
               Feature
             </p>
           </Link>
-          <Link href={"#"}>
+          <Link href={"#"} className="transition ease-in-out scale-90 hover:scale-100">
             <p className="text-black hover:text-[#f0a535]">
               Pricing
             </p>
           </Link>
-          <Link href={"#"}>
+          <Link href={"#"} className="transition ease-in-out scale-90 hover:scale-100">
             <p className="text-black hover:text-[#f0a535]">
               Login
             </p>
           </Link>
         </div>
-        <div>
+        <div className="transition ease-in-out scale-90 hover:scale-100">
           <Button
             className="bg-[#f0a535]"
             size={"lg"}
@@ -66,7 +68,25 @@ export default function Header() {
             </Button>
           </SheetTrigger>
           <SheetContent>
-            <div>Sheet Opened!</div>
+            <div>
+              <div
+                id="nav-options"
+                className="flex flex-col justify-center items-start gap-3"
+              >
+                <Link href="#">
+                  <h1>Home</h1>
+                </Link>
+                <Link href="#">
+                  <h1>Feature</h1>
+                </Link>
+                <Link href="#">
+                  <h1>Pricing</h1>
+                </Link>
+                <Link href="#">
+                  <h1>Login</h1>
+                </Link>
+              </div>
+            </div>
           </SheetContent>
         </Sheet>
       </div>
